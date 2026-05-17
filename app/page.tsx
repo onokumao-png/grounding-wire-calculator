@@ -14,9 +14,9 @@ import {
 } from '@/lib/calculator'
 
 export default function Home() {
-  const [type, setType] = useState<GroundType>('A')
+  const [type, setType] = useState<GroundType>('B')
   const [standard, setStandard] = useState<Standard>('denki')
-  const [input, setInput] = useState<CalculatorInput>({ type: 'A', phase: 'three' })
+  const [input, setInput] = useState<CalculatorInput>({ type: 'B', phase: 'three' })
   const [result, setResult] = useState<CalculatorResult | null>(null)
 
   function handleTypeChange(newType: GroundType) {
