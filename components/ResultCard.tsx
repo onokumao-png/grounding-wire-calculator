@@ -1,6 +1,6 @@
 'use client'
 
-import { CalculatorResult } from '@/lib/calculator'
+import { CalculatorResult, FORMULA_BASIS } from '@/lib/calculator'
 
 interface ResultCardProps {
   result: CalculatorResult
@@ -31,6 +31,13 @@ export function ResultCard({ result }: ResultCardProps) {
         {result.note && (
           <p className="text-xs text-blue-600 mt-1">{result.note}</p>
         )}
+      </div>
+
+      <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3">
+        <p className="text-xs font-semibold text-gray-600 mb-1">🔢 計算式の根拠</p>
+        {FORMULA_BASIS.split('\n').map((line, i) => (
+          <p key={i} className="text-xs text-gray-500 leading-relaxed">{line}</p>
+        ))}
       </div>
     </div>
   )
